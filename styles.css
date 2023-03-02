@@ -47,15 +47,28 @@ body > * {
     font-size: 18px;
     color:#000000;
     line-height:25px;
+    position: relative;
+    cursor: pointer;
+}
+
+.navigation-list li::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left:0;
+    width:100%;
+    border: 1px solid #006EB3;
+    transition:transform 300ms ease-in;
+    transform: scale(0);
+    transform-origin: left;
+}
+
+.navigation-list li:hover::after {
+    transform: scale(1);
 }
 
 .for-small-screen {
     display: none;
-}
-
-.navigation-list li:not(.for-small-screen):hover {
-    border-bottom:2px solid #006EB3;
-    cursor:pointer;
 }
 
 .navigation-button-block {
